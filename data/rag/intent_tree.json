@@ -1,0 +1,125 @@
+{
+  "version": "ops-intent-tree-v2",
+  "nodes": [
+    {
+      "id": "ops.cpu",
+      "name": "CPU 高负载排查",
+      "parent": "AIOps 故障诊断",
+      "level": "fault",
+      "route": "aiops_diagnosis",
+      "keywords": ["CPU", "cpu", "负载", "load", "使用率", "打满", "飙高"],
+      "aliases": ["机器负载高", "CPU过高", "CPU 高", "CPU 告警"],
+      "examples": ["CPU 过高怎么排查？", "单个进程 CPU 打满怎么办？", "Java 服务 CPU 飙高怎么定位？"],
+      "source_patterns": ["cpu_high_usage", "CPU", "cpu"],
+      "guidance_label": "CPU 使用率过高 / 机器负载高"
+    },
+    {
+      "id": "ops.cpu.java",
+      "name": "Java 服务 CPU 热点线程",
+      "parent": "AIOps 故障诊断 > CPU 高负载排查",
+      "level": "scenario",
+      "route": "aiops_diagnosis",
+      "keywords": ["Java", "JVM", "jstack", "jcmd", "线程", "火焰图", "async-profiler"],
+      "aliases": ["Java CPU 高", "热点线程", "线程栈"],
+      "examples": ["那如果是 Java 服务呢？", "Java 服务 CPU 高怎么定位热点线程？"],
+      "source_patterns": ["cpu_high_usage", "java", "jstack", "jcmd"],
+      "guidance_label": "Java 服务 CPU 高 / 热点线程定位"
+    },
+    {
+      "id": "ops.memory",
+      "name": "内存异常排查",
+      "parent": "AIOps 故障诊断",
+      "level": "fault",
+      "route": "aiops_diagnosis",
+      "keywords": ["内存", "memory", "OOM", "oom", "泄漏", "GC", "gc", "heap", "dump"],
+      "aliases": ["内存过高", "内存泄漏", "频繁 GC", "heap dump"],
+      "examples": ["内存泄漏怎么定位？", "Java 服务怀疑 OOM 怎么保留现场？"],
+      "source_patterns": ["memory_high_usage", "memory", "oom", "gc"],
+      "guidance_label": "内存过高 / OOM / GC"
+    },
+    {
+      "id": "ops.disk",
+      "name": "磁盘空间异常排查",
+      "parent": "AIOps 故障诊断",
+      "level": "fault",
+      "route": "aiops_diagnosis",
+      "keywords": ["磁盘", "disk", "空间", "inode", "只读", "日志文件", "大文件"],
+      "aliases": ["磁盘满", "空间不足", "inode 打满", "日志撑爆磁盘"],
+      "examples": ["磁盘空间快满了怎么处理？", "磁盘没满但不能创建文件怎么办？"],
+      "source_patterns": ["disk_high_usage", "disk", "inode"],
+      "guidance_label": "磁盘空间 / inode / 文件系统"
+    },
+    {
+      "id": "ops.slow",
+      "name": "服务响应慢排查",
+      "parent": "AIOps 故障诊断",
+      "level": "fault",
+      "route": "aiops_diagnosis",
+      "keywords": ["响应慢", "慢", "超时", "timeout", "latency", "耗时", "P99", "接口慢"],
+      "aliases": ["接口超时", "服务变慢", "RT 变高", "P99 升高"],
+      "examples": ["服务响应慢怎么排查？", "接口请求超时应该从哪些方面排查？"],
+      "source_patterns": ["slow_response", "slow", "timeout", "latency"],
+      "guidance_label": "响应慢 / 超时 / P99 升高"
+    },
+    {
+      "id": "ops.unavailable",
+      "name": "服务不可用排查",
+      "parent": "AIOps 故障诊断",
+      "level": "fault",
+      "route": "aiops_diagnosis",
+      "keywords": ["不可用", "宕机", "打不开", "挂了", "down", "5xx", "503", "健康检查", "回滚"],
+      "aliases": ["服务挂了", "系统打不开", "服务 503", "发布后不可用"],
+      "examples": ["服务不可用怎么恢复？", "服务发布后不可用什么时候回滚？"],
+      "source_patterns": ["service_unavailable", "service", "5xx", "503"],
+      "guidance_label": "服务不可用 / 5xx / 发布回滚"
+    },
+    {
+      "id": "ops.prometheus",
+      "name": "Prometheus 告警查询",
+      "parent": "监控告警",
+      "level": "tool",
+      "route": "metrics_alerts",
+      "keywords": ["Prometheus", "prometheus", "告警", "alert", "firing", "pending", "监控指标"],
+      "aliases": ["当前告警", "告警列表", "监控数据"],
+      "examples": ["当前 Prometheus 有哪些告警？", "查询最近告警"],
+      "source_patterns": ["prometheus", "alert"],
+      "guidance_label": "Prometheus 当前告警 / 监控指标"
+    },
+    {
+      "id": "project.rag",
+      "name": "RAG / Agent 项目实现",
+      "parent": "项目知识问答",
+      "level": "project",
+      "route": "knowledge_query",
+      "keywords": ["RAG", "rag", "Agent", "agent", "MCP", "mcp", "Milvus", "Embedding", "重排", "Rerank", "意图树", "问题重写"],
+      "aliases": ["项目实现", "RAG 项目", "Agent 项目", "面试讲解"],
+      "examples": ["这个项目 RAG 是怎么做的？", "MCP 工具调用怎么实现？", "意图识别和问题重写怎么做？"],
+      "source_patterns": ["RAG", "MCP", "Agent", "项目", "OpsPilot AI"],
+      "guidance_label": "RAG / Agent / MCP 项目实现"
+    },
+    {
+      "id": "knowledge.redis",
+      "name": "Redis 面试知识",
+      "parent": "技术知识问答",
+      "level": "knowledge",
+      "route": "knowledge_query",
+      "keywords": ["Redis", "redis", "RDB", "AOF", "缓存", "分布式锁", "雪崩", "击穿", "穿透", "Stream"],
+      "aliases": ["Redis 面试", "Redis 持久化", "缓存问题"],
+      "examples": ["Redis RDB 和 AOF 有什么区别？", "缓存雪崩击穿穿透怎么回答？"],
+      "source_patterns": ["Redis", "redis"],
+      "guidance_label": "Redis 面试知识"
+    },
+    {
+      "id": "knowledge.mysql",
+      "name": "MySQL 面试知识",
+      "parent": "技术知识问答",
+      "level": "knowledge",
+      "route": "knowledge_query",
+      "keywords": ["MySQL", "mysql", "索引", "事务", "锁", "慢查询", "InnoDB", "SQL"],
+      "aliases": ["MySQL 面试", "数据库面试", "SQL 优化"],
+      "examples": ["MySQL 索引怎么讲？", "慢查询怎么优化？"],
+      "source_patterns": ["MySQL", "mysql", "SQL"],
+      "guidance_label": "MySQL / SQL / 数据库面试知识"
+    }
+  ]
+}

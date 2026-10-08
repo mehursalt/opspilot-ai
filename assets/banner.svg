@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="OpsPilot AI — Agent-driven operations diagnosis">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0D1B32"/><stop offset="1" stop-color="#123451"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#53E0C6"/><stop offset="1" stop-color="#72B8FF"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="18"/></filter>
+  </defs>
+  <rect width="1200" height="320" rx="24" fill="url(#bg)"/>
+  <circle cx="1010" cy="54" r="130" fill="#27BFAE" opacity=".12" filter="url(#glow)"/>
+  <circle cx="1130" cy="284" r="150" fill="#4B8DFF" opacity=".12" filter="url(#glow)"/>
+  <g fill="none" stroke="#62D8D0" stroke-width="3" opacity=".62">
+    <path d="M884 72h95l26 30h91"/><path d="M848 155h122l34-29h114"/><path d="M875 233h109l27-28h88"/>
+  </g>
+  <g fill="#123451" stroke="#6CDCCD" stroke-width="3"><circle cx="848" cy="155" r="21"/><circle cx="1098" cy="102" r="13"/><circle cx="1118" cy="126" r="11"/><circle cx="1099" cy="205" r="13"/></g>
+  <path d="M848 145v20m-10-10h20" stroke="#6CDCCD" stroke-width="3" stroke-linecap="round"/>
+  <rect x="68" y="62" width="52" height="52" rx="14" fill="#173E54" stroke="#4EDFC4" stroke-width="2"/>
+  <path d="M79 88h9l5-11 8 22 5-11h9" fill="none" stroke="url(#accent)" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="68" y="176" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="67" fill="#F4FBFF">OpsPilot <tspan fill="#64DDCE">AI</tspan></text>
+  <text x="72" y="223" font-family="Segoe UI,Arial,sans-serif" font-size="24" fill="#B7CCDA">Agent-driven operations diagnosis</text>
+  <rect x="72" y="252" width="156" height="36" rx="18" fill="#1C4C5B"/><text x="94" y="276" font-family="Segoe UI,Arial,sans-serif" font-size="16" fill="#A8F2E6">RAG + LangGraph</text>
+  <rect x="242" y="252" width="119" height="36" rx="18" fill="#224560"/><text x="269" y="276" font-family="Segoe UI,Arial,sans-serif" font-size="16" fill="#C0DDFF">MCP Tools</text>
+</svg>

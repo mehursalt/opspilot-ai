@@ -1,0 +1,114 @@
+{
+  "version": "query-term-mapping-v1",
+  "updated_at": "2026-08-08T23:05:38",
+  "mappings": [
+    {
+      "id": "cpu_high",
+      "source_term": "CPU飙高",
+      "target_term": "CPU 使用率过高",
+      "scenario": "AIOps",
+      "enabled": true,
+      "priority": 100,
+      "match_type": "contains",
+      "description": "把口语化 CPU 告警统一到知识库标准说法",
+      "created_at": "2026-08-08T22:58:41",
+      "updated_at": "2026-08-08T22:58:41"
+    },
+    {
+      "id": "cpu_full",
+      "source_term": "CPU打满",
+      "target_term": "CPU 使用率过高",
+      "scenario": "AIOps",
+      "enabled": true,
+      "priority": 98,
+      "match_type": "contains",
+      "description": "常见线上告警口语",
+      "created_at": "2026-08-08T22:58:41",
+      "updated_at": "2026-08-08T22:58:41"
+    },
+    {
+      "id": "java_cpu",
+      "source_term": "Java卡死",
+      "target_term": "Java 服务 CPU 高，线程阻塞或热点线程",
+      "scenario": "Java",
+      "enabled": true,
+      "priority": 96,
+      "match_type": "contains",
+      "description": "引导 Java 专用排查链路",
+      "created_at": "2026-08-08T22:58:41",
+      "updated_at": "2026-08-08T22:58:41"
+    },
+    {
+      "id": "service_slow",
+      "source_term": "服务卡",
+      "target_term": "服务响应慢",
+      "scenario": "AIOps",
+      "enabled": true,
+      "priority": 90,
+      "match_type": "contains",
+      "description": "响应慢类问题归一化",
+      "created_at": "2026-08-08T22:58:41",
+      "updated_at": "2026-08-08T22:58:41"
+    },
+    {
+      "id": "api_down",
+      "source_term": "接口挂了",
+      "target_term": "服务不可用",
+      "scenario": "AIOps",
+      "enabled": true,
+      "priority": 90,
+      "match_type": "contains",
+      "description": "可用性故障归一化",
+      "created_at": "2026-08-08T22:58:41",
+      "updated_at": "2026-08-08T22:58:41"
+    },
+    {
+      "id": "disk_full",
+      "source_term": "磁盘爆了",
+      "target_term": "磁盘空间不足",
+      "scenario": "AIOps",
+      "enabled": true,
+      "priority": 88,
+      "match_type": "contains",
+      "description": "磁盘告警归一化",
+      "created_at": "2026-08-08T22:58:41",
+      "updated_at": "2026-08-08T22:58:41"
+    },
+    {
+      "id": "memory_leak",
+      "source_term": "内存涨不停",
+      "target_term": "内存泄漏",
+      "scenario": "AIOps",
+      "enabled": true,
+      "priority": 86,
+      "match_type": "contains",
+      "description": "内存问题归一化",
+      "created_at": "2026-08-08T22:58:41",
+      "updated_at": "2026-08-08T22:58:41"
+    },
+    {
+      "id": "jvm_gc",
+      "source_term": "频繁 Full GC",
+      "target_term": "JVM GC 频繁",
+      "scenario": "Java",
+      "enabled": true,
+      "priority": 84,
+      "match_type": "contains",
+      "description": "Java 内存/GC 场景归一化",
+      "created_at": "2026-08-08T22:58:41",
+      "updated_at": "2026-08-08T22:58:41"
+    },
+    {
+      "id": "接口炸了_服务不可用",
+      "source_term": "接口炸了",
+      "target_term": "服务不可用",
+      "scenario": "AIOps",
+      "enabled": true,
+      "priority": 80,
+      "match_type": "contains",
+      "description": "页面新增规则",
+      "created_at": "2026-08-08T23:05:38",
+      "updated_at": "2026-08-08T23:05:38"
+    }
+  ]
+}
